@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel|Actor"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <title>Third Dawn: Siegecraft</title>
+  </head>
+  <body class="bg-white">
+    <nav
+      class="bg-gray-800 shadow md:flex md:items-center z-[11] md:justify-between"
+    >
+      <div class="flex justify-between items-center">
+        <img
+          src="assets/logo_285.png"
+          alt="Third Dawn: Siegecraft"
+          class="h-11 inline cursor-pointer m-4 pl-7 md:pl-5"
+        />
+        <span
+          class="text-4xl text-white cursor-pointer md:hidden block pr-7 font-bold"
+        >
+          <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon
+        ></span>
+      </div>
+      <ul
+        class="md:flex md:flex-row md:items-center z-[10] md:z-auto absolute md:static bg-gray-800 w-full left-0 md:w-auto py-4 pl-7 md:pr-5 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in duration-300"
+      >
+        <li
+          class="text-2xl md:text-xl font-[Cinzel] font-bold text-gray-200 hover:text-orange-400 duration-300 cursor-pointer px-4 hover:border-b-2 hover:border-orange-400 my-6 md:my-0"
+        >
+          <a href="#"></a>Store
+        </li>
+        <li
+          class="text-2xl md:text-xl font-[Cinzel] font-bold text-gray-200 hover:text-orange-400 duration-300 cursor-pointer px-4 hover:border-b-2 hover:border-orange-400 my-6 md:my-0"
+        >
+          <a href="#"></a>Elements
+        </li>
+        <li
+          class="text-2xl md:text-xl font-[Cinzel] font-bold text-gray-200 hover:text-orange-400 duration-300 cursor-pointer px-4 hover:border-b-2 hover:border-orange-400 my-6 md:my-0"
+        >
+          <a href="#"></a>Cards
+        </li>
+        <li
+          class="text-2xl md:text-xl font-[Cinzel] font-bold text-gray-200 hover:text-orange-400 duration-300 cursor-pointer px-4 hover:border-b-2 hover:border-orange-400 my-6 md:my-0"
+        >
+          <a href="#"></a>Blog
+        </li>
+        <button
+          class="bg-red-900 text-yellow-100 text-2xl md:text-xl rounded font-[Cinzel] font-bold duration-300 px-6 py-2 mx-4 hover:bg-red-700"
+          id="showOrderModal"
+        >
+          Order Now
+        </button>
+      </ul>
+    </nav>
+    <section class="hero flex" id="hero-area">
+      <div
+        class="w-full min-h-screen hero-image bg-right-bottom bg-cover bg-no-repeat flex after:bg-gradient-to-r after:from-cyan-500 after:to-blue-500 after:absolute"
+        style="
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url(./assets/hero_image.jpg);
+        "
+      >
+        <div
+          class="heading-container relative container mx-auto p-4 flex items-end z-10"
+        >
+          <div>
+            <div
+              class="content md:float-right py-4 px-2 md:px-5 mb-12 w-full mx-2 md:w-10/12 xl:w-1/2 mr-40"
+            >
+              <h1
+                class="heading text-4xl md:text-6xl font-[Cinzel] text-gray-200 font-bold"
+              >
+                Siege the Day
+              </h1>
+              <p class="font-[Actor] text-gray-200 leading-7 mt-5 text-lg">
+                Integer posuere erat a ante venenatis dapibus posuere velit
+                aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur
+                et. Etiam porta sem malesuada magna mollis euismod. Morbi leo
+                risus, porta ac consectetur ac, vestibulum at eros. Cras mattis
+                consectetur purus sit amet fermentum.
+              </p>
+              <button
+                class="bg-red-900 text-yellow-100 text-2xl md:text-xl rounded font-[Cinzel] font-bold duration-300 px-6 py-2 my-5 hover:bg-red-700"
+                id="buyNow"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="more-info"
+      class="w-full content-center pt-16 bg-slate-900 flex justify-center flex-col lg:flex-row mx-auto"
+    >
+      <div
+        id="more-info-text-container"
+        class="container px-6 sm:m-auto sm:w-10/12 md:w-10/12 lg:w-1/2 lg:ml-12 lg:mr-6 xl:ml-48 flex flex-col content-center text-center"
+      >
+        <h2
+          class="text-3xl color-gray-200 font-[Cinzel] text-gray-200 hover:text-green-500 duration-300"
+        >
+          Take Control of the Battlefield
+        </h2>
+        <p class="font-[Actor] text-gray-200 leading-7 my-7 text-lg">
+          Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+          Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo
+          cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem
+          malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur
+          ac, vestibulum at eros. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </div>
+      <img
+        src="./assets/card_back.jpg"
+        alt="Siegecraft Card Back"
+        class="w-1/2 m-auto sm:w-8/12 sm:m-auto lg:mr-12 xl:mr-72 lg:ml-6 lg:justify-start lg:w-80 mb-8 lg:mb-10 rounded-lg"
+      />
+    </section>
+
+    <section
+      class="w-full content-center mt-8 bg-white flex justify-center flex-col md:mx-auto"
+    >
+      <div class="flex flex-col content-center m-auto">
+        <h2
+          class="text-3xl font-[Cinzel] font-bold m-5 md:w-1/2 lg:w-7/12 text-gray-800 hover:text-orange-800 duration-300 xl:ml-48"
+        >
+          Master the Elements
+        </h2>
+        <p
+          class="font-[Actor] text-gray-800 leading-7 m-5 my-7 text-lg md:w-1/2 lg:w-7/12 xl:ml-48"
+        >
+          The 6 Elements of Third Dawn: Siegecraft allow you to play in any way
+          you want. Which will you master first?
+        </p>
+      </div>
+
+
+      <div
+        id="tabContainer"
+        class="container flex flex-col justify-center mx-auto"
+        x-data="{
+            openTab: 1
+        }"
+      >
+        <ul
+          class="nav nav-tabs mx-auto md:place-content-stretch md:w-fill items-center flex flex-row list-none border-b-0 md:mb-4 overflow-x-auto"
+          id="tabs-tab6"
+          role="tablist"
+        >
+          <li @click="openTab = 1" class="nav-item" role="presentation">
+            <a
+              href="#tabs-earth"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-green-500 px-6 py-3 bg-white text-green-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-green-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-green-800 active:text-green-600 transition duration-150 ease-in-out active"
+              border-b-0
+              border-green-500
+              font-medium
+              text-xs
+              leading-tight
+              uppercase
+              hover:bg-green-700
+              id="tabs-earth-tab6"
+              >Earth
+            </a>
+          </li>
+          <li @click="openTab = 2" class="nav-item" role="presentation">
+            <a
+              href="#tabs-air"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-orange-500 px-6 py-3 bg-white text-orange-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-orange-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-green-800 active:text-orange-600 transition duration-150 ease-in-out"
+              id="tabs-air-tab6"
+              >Air
+            </a>
+          </li>
+          <li @click="openTab = 3" class="nav-item" role="presentation">
+            <a
+              href="#tabs-fire"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-red-500 px-6 py-3 bg-white text-red-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-red-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-red-800 active:text-red-600 transition duration-150 ease-in-out"
+              id="tabs-fire-tab6"
+              data-bs-toggle="pill"
+              data-bs-target="#tabs-fire6"
+              aria-selected="false"
+              role="tab"
+              >Fire
+            </a>
+          </li>
+          <li @click="openTab = 4" class="nav-item" role="presentation">
+            <a
+              href="#tabs-water6"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-blue-500 px-6 py-3 bg-white text-blue-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-blue-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-blue-800 active:text-blue-600 transition duration-150 ease-in-out"
+              >Water
+            </a>
+          </li>
+          <li @click="openTab = 5" class="nav-item" role="presentation">
+            <a
+              href="#tabs-light6"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-yellow-500 px-6 py-3 bg-white text-yellow-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-yellow-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-yellow-800 active:text-yellow-600 transition duration-150 ease-in-out"
+              id="tabs-light-tab6"
+              >Light
+            </a>
+          </li>
+          <li @click="openTab = 6" class="nav-item" role="presentation">
+            <a
+              href="#tabs-light6"
+              class="nav-link w-full block font-[Actor] leading-tight border-x-0 border-t-0 border-b-4 border-hidden mb-4 uppercase border-violet-500 px-6 py-3 bg-white text-violet-600 text-lg font-semibold hover:text-black hover:mb-0 hover:bg-gray-100 hover:border-solid hover:border-b-4 focus:bg-violet-700 focus:outline-none focus:ring-0 active:text-bold active:border-b-4 active:bg-violet-800 active:text-violet-600 transition duration-150 ease-in-out"
+              >Shadow
+            </a>
+          </li>
+        </ul>
+        <div
+          class="tab-content flex flex-col w-full md:w-5/6 mt-0 mx-auto items-center mb-8"
+          id="tabs-tabContent6"
+        >
+          <d
+            class="tab-pane fade show active bg-green-300 rounded w-full flex flex-col text-lg px-5 py-8 md:w-4/6 content-center"
+            id="tabs-earth"
+            role="tabpanel"
+            aria-labelledby="tabs-earth-tab6"
+            x-show="openTab === 1"
+          >
+            <div class="w-full bg-green-600 mb-5 py-40 rounded"></div>
+            <h1 class="font-bold text-gray-800">Earth Content Here</h1>
+            <p class="text-gray-800 mt-4 mb-4">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+              nesciunt cupiditate sapiente dolore praesentium.
+            </p>
+            <button
+              class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+            >
+              Learn More
+            </button>
+          </d>
+          <div
+            class="tab-pane fade show active bg-orange-300 rounded w-full flex flex-col text-lg px-5 py-8 md:w-4/6 justify-center content-center"
+            id="tabs-air6"
+            role="tabpanel"
+            aria-labelledby="tabs-air-tab"
+            x-show="openTab === 2"
+          >
+            <div class="w-full bg-orange-600 rounded mb-5 py-40"></div>
+            <h1 class="font-[Actor] font-bold text-gray-800">
+              Air Content Here
+            </h1>
+            <p class="font-[Actor] text-gray-800 mt-4 mb-4">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+              nesciunt cupiditate sapiente dolore praesentium.
+            </p>
+            <button
+              class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+          <div class="tab-pane fade show active bg-red-300 rounded w-full flex
+          flex-col text-lg px-5 py-8 md:w-4/6 justify-center content-cente
+          id="tabs-fire6" role="tabpanel" aria-labelledby="tabs-fire-tab"
+          x-show="openTab === 3" >
+          <div class="w-full bg-red-600 mb-5 rounded py-40"></div>
+          <h1 class="font-[Actor] font-bold text-gray-800">
+            Fire Content Here
+          </h1>
+          <p class="font-[Actor] text-gray-800 mt-4 mb-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+            nesciunt cupiditate sapiente dolore praesentium.
+          </p>
+          <button
+            class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+          >
+            Learn More
+          </button>
+        </div>
+        <div
+          class="tab-pane fade show active bg-blue-300 rounded w-full flex flex-col text-lg px-5 py-8 md:w-4/6 justify-center content-center"
+          id="tabs-water6"
+          role="tabpanel"
+          aria-labelledby="tabs-water-tab"
+          x-show="openTab === 4"
+        >
+          <div class="w-full bg-blue-600 rounded mb-5 py-40"></div>
+          <h1 class="font-[Actor] font-bold text-gray-800">
+            Water Content Here
+          </h1>
+          <p class="font-[Actor] text-gray-800 mt-4 mb-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+            nesciunt cupiditate sapiente dolore praesentium.
+          </p>
+          <button
+            class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+          >
+            Learn More
+          </button>
+        </div>
+        <div
+          class="tab-pane fade show active bg-yellow-300 rounded w-full flex flex-col text-lg px-5 py-8 md:w-4/6 justify-center content-center"
+          id="tabs-light6"
+          role="tabpanel"
+          aria-labelledby="tabs-light-tab6"
+          x-show="openTab === 5"
+        >
+          <div class="w-full bg-yellow-600 rounded mb-5 py-40"></div>
+          <h1 class="font-[Actor] font-bold text-gray-800">
+            Light Content Here
+          </h1>
+          <p class="font-[Actor] text-gray-800 mt-4 mb-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+            nesciunt cupiditate sapiente dolore praesentium.
+          </p>
+          <button
+            class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+          >
+            Learn More
+          </button>
+        </div>
+        <div
+          class="tab-pane fade show active bg-violet-300 rounded w-full flex flex-col text-lg px-5 py-8 md:w-4/6 justify-center content-center"
+          id="tabs-shadow6"
+          role="tabpanel"
+          aria-labelledby="tabs-shadow-tab6"
+          x-show="openTab === 6"
+        >
+          <div class="w-full bg-violet-600 rounded mb-5 py-40"></div>
+          <h1 class="font-[Actor] font-bold text-gray-800">
+            Shadow Content Here
+          </h1>
+          <p class="font-[Actor] text-gray-800 mt-4 mb-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+            nesciunt cupiditate sapiente dolore praesentium.
+          </p>
+          <button
+            class="w-full bg-gray-100 rounded opacity-80 font-[Actor] py-3 text-xl font-bold cursor-pointer"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <section
+      id="signup"
+      class="pt-8 bg-slate-900 text-gray-100 pb-8 flex flex-col items-center text-2xl p-5 w-full"
+    >
+      <h1 class="text-gray-100 font-[Cinzel] text-center w-11/12">
+        Sign Up Now To Learn More
+      </h1>
+      <p class="font-[Actor] text-lg mt-6 m-2 w-11/12 md:max-w-screen-sm">
+        Join our mailing list to learn more about
+        <span class="italic">Third Dawn: Siegecraft</span>, including when it
+        will release.
+      </p>
+      <div
+        class="form-group form-floating w-full px-2 md:max-w-10/12 md:max-w-screen-sm flex flex-col md:w-auto md:flex-row md:m-auto justify-center items-center"
+      >
+        <label for="email"></label>
+        <input
+          type="email"
+          class="form-control form-floating block mt-5 min-w-full text-gray-900 placeholder:font-[Actor] placeholder:text-base md:placeholder:text-lg md:pt-2 md:pb-4 py-2 rounded px-2 md:w-auto"
+          name=""
+          id=""
+          aria-describedby="helpId"
+          placeholder="Email Address"
+        />
+        <button
+          class="bg-red-900 text-yellow-100 text-xl min-w-full md:text-2xl rounded font-[Cinzel] font-bold duration-300 mt-5 mb-8 md:mb-16px-6 py-3 w-11/12 md:min-w-fit md:ml-3 md:px-6 md:mt-5 hover:bg-red-700 md:m-auto"
+        >
+          Sign Up
+        </button>
+      </div>
+    </section>
+    <footer class="bg-gray-800 pt-10">
+      <div
+        class="max-w-4xl m-auto text-gray-800 flex flex-wrap justify-left items-center"
+      >
+        <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+          <div class="text-xs uppercase text-gray-400 font-medium mb-6">
+            Store
+          </div>
+
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Subscribe
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Buy Now
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Specials
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Last Chance
+          </a>
+        </div>
+
+        <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+          <div class="text-xs uppercase text-gray-400 font-medium mb-6">
+            Elements
+          </div>
+
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Earth
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Air
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Fire
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Water
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Light
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Shadow
+          </a>
+        </div>
+
+        <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+          <div class="text-xs uppercase text-gray-400 font-medium mb-6">
+            Cards
+          </div>
+
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Prime
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Future Sets
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+          <div class="text-xs uppercase text-gray-400 font-medium mb-6">
+            Blog
+          </div>
+
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Lorem
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Lorem ipsum
+          </a>
+          <a
+            href="#"
+            class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
+          >
+            Lorem ipsum dolor
+          </a>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-2">
+        <div
+          class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm flex-col md:flex-row max-w-6xl"
+        >
+          <div class="mt-2 text-center">
+            © Copyright ©2022 Arcane Arts, LLC. All Rights Reserved • Privacy
+            Policy
+          </div>
+
+          <!-- Required Unicons (if you want) -->
+          <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+            <a href="#" class="w-6 mx-1">
+              <i class="uil uil-facebook-f"></i>
+            </a>
+            <a href="#" class="w-6 mx-1">
+              <i class="uil uil-twitter-alt"></i>
+            </a>
+            <a href="#" class="w-6 mx-1">
+              <i class="uil uil-youtube"></i>
+            </a>
+            <a href="#" class="w-6 mx-1">
+              <i class="uil uil-linkedin"></i>
+            </a>
+            <a href="#" class="w-6 mx-1">
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <aside
+      class="bg-black bg-opacity-70 inset-0 absolute hidden items-center justify-center z-20 "
+      id="orderModal"
+    >
+      <div class="bg-white rounded shadow-xl max-w-xl">
+        <div class="flex justify-between items-center py-8 px-4">
+          <h2 class="font-[Cinzel] font-bold text-2xl md:text-3xl">
+            Sign Up Now To Learn More
+          </h2>
+
+          <svg
+            class="w-6 h-6 md:h-8 md:w-8 cursor-pointer"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="close-btn"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </div>
+        <div class="mt-8">
+          <p class="font-[Actor] text-lg px-4">
+            Join our mailing list to learn more about
+            <span class="italic">Third Dawn: Siegecraft</span>, including when
+            it will release.
+          </p>
+          <div
+        class="form-group form-floating w-full px-2 md:max-w-10/12 md:max-w-screen-sm flex flex-col md:w-auto md:flex-row md:m-auto justify-center items-center pb-8 pt-8 md:pb-3"
+      >
+        <label for="email"></label>
+        <input
+          type="email"
+          class="form-control form-floating block mt-5 min-w-full border-2 border-gray-300 text-gray-900 placeholder:font-[Actor] placeholder:text-base md:placeholder:text-lg md:pt-2 md:pb-4 py-2 rounded px-2 md:min-w-0 md:w-10/12"
+          name=""
+          id=""
+          aria-describedby="helpId"
+          placeholder="Email Address"
+        />
+        <button
+          class="bg-red-900 text-yellow-100 text-xl min-w-full md:text-2xl rounded font-[Cinzel] font-bold duration-300 mt-5 mb-8 md:mb-16px-6 py-3 md:min-w-fit md:ml-3 md:px-6 md:mt-5 hover:bg-red-700 md:m-auto"
+        >
+          Sign Up
+        </button>
+        </div>
+      </div>
+    </aside>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      function Menu(e) {
+        let list = document.querySelector("ul");
+
+        if (e.name === "menu") {
+          e.name = "close";
+          list.classList.add("top-[76px]");
+          list.classList.add("opacity-100");
+        } else {
+          e.name = "menu";
+          list.classList.remove("top-[76px]");
+          list.classList.remove("opacity-100");
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const overlay = document.querySelector('#orderModal')
+          const orderButton1 = document.querySelector('#showOrderModal')
+          const orderButton2 = document.querySelector('#buyNow')
+          const closeModalButton = document.querySelector('#close-btn')
+
+
+            orderButton1.addEventListener('click',() => {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+
+          } )
+
+orderButton2.addEventListener('click',() => {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+
+          } )
+
+
+
+          closeModalButton.addEventListener('click', () => {
+              overlay.classList.remove('flex')
+              overlay.classList.add('hidden')
+          })
+      })
+
+    </script>
+  </body>
+</html>
